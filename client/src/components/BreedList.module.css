@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 0.5rem;
+  height: 90%;
+  width: 80%;
+}
+
+.cardsContainer {
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  height: 85%;
+}
+
+.paginate {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+
+.pagBtn {
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.pagBtn:hover {
+  background-color: white;
+  transform: translateY(-0.5%);
+  transform: translateX(-0.5%);
+  transition: 0.125s;
+}
+
+.pagDisabledBtn {
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}

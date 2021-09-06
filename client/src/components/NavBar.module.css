@@ -1,0 +1,73 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.5);
+  height: 90%;
+  width: 15%;
+}
+
+.filterInputsContainer {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 12.5%;
+  width: 100%;
+}
+
+.filterInputs {
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  background-color: transparent;
+  outline: none;
+  text-align: center;
+  height: 1.5rem;
+  width: 80%;
+}
+
+.filterInputs:focus {
+  border-bottom: 2.5px solid rgba(128, 128, 128, 0.5);
+}
+
+.filterBtnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 35%;
+  width: 100%;
+}
+
+.createBtnContainer {
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 12.5%;
+  width: 100%;
+}
+
+.btn {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
+  width: 10rem;
+  height: 2.5rem;
+}
+
+.btn:hover {
+  background-color: rgba(128, 128, 128, 0.25);
+  transform: translateY(-0.5%);
+  transform: translateX(-0.5%);
+  transition: 0.125s;
+}
