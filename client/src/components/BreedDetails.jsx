@@ -11,8 +11,15 @@ const BreedDetails = () => {
 
   useEffect(() => {
     const getBreedByApi = async () => {
-      const breed = await axios.get(`http://localhost:3001/dogs/${params.id}`);
-      setBreed(breed.data);
+      let { data: breed } = await axios.get(
+        `http://localhost:3001/dogs/${params.id}`
+      );
+      if (breed[0].temperaments) {
+        breed[0].temperament = breed[0].temperaments
+          .map((temp) => temp.name)
+          .join(", ");
+      }
+      setBreed(breed);
     };
     getBreedByApi();
   }, []);

@@ -58,9 +58,9 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         defaultValue: "No data",
       },
-      temperament: {
+      /* temperament: {
         type: DataTypes.STRING,
-      },
+      }, */
     },
     { timestamps: false }
   );

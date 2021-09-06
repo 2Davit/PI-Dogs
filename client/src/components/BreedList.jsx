@@ -11,7 +11,15 @@ const BreedList = ({ filter }) => {
   const { breeds } = useSelector((state) => state);
 
   const filterFunction = () => {
-    let filtBreeds = breeds.filter(
+    let filtBreeds = breeds.map((breed) => {
+      if (breed.temperaments) {
+        breed.temperament = breed.temperaments
+          .map((temp) => temp.name)
+          .join(", ");
+      }
+    });
+
+    filtBreeds = breeds.filter(
       (breed) =>
         breed.name.toUpperCase().includes(filter.breed.toUpperCase()) &&
         breed.temperament

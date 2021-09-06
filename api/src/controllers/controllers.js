@@ -50,7 +50,7 @@ const getTemperaments = async () => {
       let temps = breed.temperament.split(",");
       for (let i = 0; i < temps.length; i++) {
         Temperament.findOrCreate({
-          where: { name: temps[i] },
+          where: { name: temps[i].trim() },
         });
       }
     }
