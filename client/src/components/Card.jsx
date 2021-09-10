@@ -6,7 +6,7 @@ const Card = ({ breed }) => {
   return (
     <div className={s.container}>
       <Link className={s.link} to={`/breed-details/${breed.id}`}>
-        <img className={s.img} src={breed.photo} />
+        <img className={s.img} src={breed.photo} alt={breed.name} />
       </Link>
       <div className={s.infoContainer}>
         <div className={s.info}>

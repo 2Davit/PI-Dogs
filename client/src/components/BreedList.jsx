@@ -11,7 +11,7 @@ const BreedList = ({ filter }) => {
   const { breeds } = useSelector((state) => state);
 
   const filterFunction = () => {
-    let filtBreeds = breeds.map((breed) => {
+    let filtBreeds = breeds.forEach((breed) => {
       if (breed.temperaments) {
         breed.temperament = breed.temperaments
           .map((temp) => temp.name)
@@ -72,9 +72,7 @@ const BreedList = ({ filter }) => {
     setFilteredBreeds(filtBreeds.slice(page * 8 - 8, page * 8));
   };
 
-  useEffect(() => {
-    filterFunction();
-  }, [breeds, page, filter]);
+  useEffect(filterFunction, [breeds, page, filter]);
 
   useEffect(() => {
     setPage(1);

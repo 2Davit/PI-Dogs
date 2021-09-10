@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import s from "./NavBar.module.css";
 
-function NavBar({ filter, setFilter }) {
+const NavBar = ({ filter, setFilter }) => {
   const handleChange = (e) => {
     setFilter({ ...filter, [e.target.name]: e.target.value });
   };
@@ -56,6 +56,6 @@ function NavBar({ filter, setFilter }) {
       </div>
     </div>
   );
-}
+};
 
 export default NavBar;

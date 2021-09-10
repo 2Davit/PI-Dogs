@@ -40,8 +40,7 @@
 
 .pagBtn:hover {
   background-color: white;
-  transform: translateY(-0.5%);
-  transform: translateX(-0.5%);
+  transform: translate(-0.5%);
   transition: 0.125s;
 }
 

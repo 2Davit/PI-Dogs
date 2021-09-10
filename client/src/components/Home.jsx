@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(getBreeds());
     dispatch(getTemperaments());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={s.container}>

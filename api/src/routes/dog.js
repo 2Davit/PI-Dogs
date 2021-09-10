@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
 
   newBreed.addTemperament(temps);
 
-  res.status(200).send(`Dog created!`);
+  res.status(200).send(newBreed);
 });
 
 module.exports = router;

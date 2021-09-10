@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import s from "./LandingPage.module.css";
 import Golden from "../res/Golden.mp4";
 
-function LandingPage() {
+const LandingPage = () => {
   return (
     <div className={s.container}>
       <video autoPlay loop muted className={s.bgVideo}>
@@ -14,6 +14,6 @@ function LandingPage() {
       </Link>
     </div>
   );
-}
+};
 
 export default LandingPage;

@@ -92,7 +92,7 @@ const CreateBreedForm = ({ history }) => {
 
   useEffect(() => {
     setAddTemp(temperamentList.slice(page * 10 - 10, page * 10));
-  }, [page]);
+  }, [page, temperamentList]);
 
   return (
     <div className={s.background}>

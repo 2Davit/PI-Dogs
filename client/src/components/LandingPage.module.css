@@ -24,13 +24,17 @@
   border: none;
   cursor: pointer;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.6);
   width: 20rem;
   height: 2.5rem;
 }
 
 .enterBtn:hover {
-  background-color: rgba(255, 255, 255, 0.835);
-  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: larger;
   transition: 0.25s;
+  width: 8rem;
+  height: 8rem;
 }

@@ -89,8 +89,8 @@
 
 .tempBtn:hover {
   background-color: rgba(255, 255, 255);
-  transform: translateY(0.5%);
-  transform: translateX(0.5%);
+  font-weight: 500;
+  transform: scale(101%);
   transition: 0.125s;
 }
 
@@ -125,6 +125,7 @@
 
 .tempPageBtn:hover {
   background-color: rgba(255, 255, 255);
+  transform: translate(0.5%);
 }
 
 .btnContainer {
@@ -161,9 +162,9 @@
 .btn:hover {
   background-color: rgba(255, 255, 255);
   color: black;
-  transform: translateY(-0.5%);
-  transform: translateX(-0.5%);
+  transform: scale(101%);
   transition: 0.125s;
+  height: 2.75rem;
 }
 
 .textHasErrors {
