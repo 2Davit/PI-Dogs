@@ -85,7 +85,7 @@ const CreateBreedForm = ({ history }) => {
   const submitBreed = async (e) => {
     e.preventDefault();
     setErrors({ ...errors, hasErrors: true });
-    await axios.post("http://localhost:3001/dog", newBreed);
+    await axios.post("/dog", newBreed);
     /* history.push("/home"); */
     history.goBack();
   };

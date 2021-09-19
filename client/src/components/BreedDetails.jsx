@@ -40,13 +40,13 @@ const BreedDetails = () => {
           <div className={s.infoHeaders}>
             <span>Height:</span>
           </div>
-          <span>Minimum height: {breed[0]?.minHeight || "Unknow"}cm.</span>
-          <span>Maximum height: {breed[0]?.maxHeight || "Unknow"}cm.</span>
+          <span>Minimum height: {breed[0]?.minHeight}cm.</span>
+          <span>Maximum height: {breed[0]?.maxHeight}cm.</span>
           <div className={s.infoHeaders}>
             <span>Weight:</span>
           </div>
-          <span>Minimum weight: {breed[0]?.minWeight || "Unknow"}kg.</span>
-          <span>Maximum weight: {breed[0]?.maxWeight || "Unknow"}kg.</span>
+          <span>Minimum weight: {breed[0]?.minWeight}kg.</span>
+          <span>Maximum weight: {breed[0]?.maxWeight}kg.</span>
           <div className={s.infoHeaders}>
             <span>Life Span:</span>
           </div>

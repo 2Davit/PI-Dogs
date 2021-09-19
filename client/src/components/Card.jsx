@@ -19,13 +19,9 @@ const Card = ({ breed }) => {
           <div className={s.infoHeaders}>Weight</div>
           <div className={s.infoText}>
             <span>
-              {breed.minWeight
-                ? "Min: " + breed.minWeight + "kg"
-                : "Min: Unknow"}
+              {"Min: " + breed.minWeight + "kg"}
               <br />
-              {breed.maxWeight
-                ? "Max: " + breed.maxWeight + "kg"
-                : "Max: Unknow"}
+              {"Max: " + breed.maxWeight + "kg"}
             </span>
           </div>
         </div>

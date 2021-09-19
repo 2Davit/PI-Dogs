@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getBreeds = () => {
   return async (dispatch) => {
-    const { data: payload } = await axios.get("http://localhost:3001/dogs");
+    const { data: payload } = await axios.get("/dogs");
     return dispatch({
       type: GET_BREEDS,
       payload,
@@ -13,9 +13,7 @@ export const getBreeds = () => {
 
 export const getTemperaments = () => {
   return async (dispatch) => {
-    const { data: payload } = await axios.get(
-      "http://localhost:3001/temperament"
-    );
+    const { data: payload } = await axios.get("/temperament");
     return dispatch({
       type: GET_TEMPERAMENTS,
       payload,

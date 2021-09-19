@@ -14,7 +14,6 @@ const NavBar = ({ filter, setFilter }) => {
   return (
     <div className={s.container}>
       <div className={s.filterInputsContainer}>
-        {/* <label>Search for breed</label> */}
         <input
           className={s.filterInputs}
           name="breed"
@@ -22,7 +21,6 @@ const NavBar = ({ filter, setFilter }) => {
           onChange={handleChange}
           placeholder="Search for breed"
         />
-        {/* <label>Filter by temperament</label> */}
         <input
           className={s.filterInputs}
           name="temperament"
