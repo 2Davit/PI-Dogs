@@ -44,6 +44,7 @@ const getBreeds = async () => {
   const mappedDbBreeds = dbBreeds.map((breed) => {
     return {
       id: breed.id,
+      original: breed.original,
       name: breed.name,
       origin: breed.origin,
       photo: breed.photo,

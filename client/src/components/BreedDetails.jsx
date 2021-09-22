@@ -58,7 +58,7 @@ const BreedDetails = () => {
           <div className={s.infoHeaders}>
             <span>Temperaments:</span>
           </div>
-          <span>{breed[0]?.temperament || "Unknow"}.</span>
+          <span>{breed[0]?.temperament.join(", ") || "Unknow"}.</span>
           <Link to="/home">
             <button className={s.backBtn}>BACK</button>
           </Link>
