@@ -6,24 +6,19 @@ import { useSelector } from "react-redux";
 
 const BreedList = ({ filter }) => {
   const [page, setPage] = useState(1);
+  const [length, setLength] = useState(0);
   const [filteredBreeds, setFilteredBreeds] = useState([]);
 
   const { breeds } = useSelector((state) => state);
 
   const filterFunction = () => {
-    let filtBreeds = breeds.forEach((breed) => {
-      if (breed.temperaments) {
-        breed.temperament = breed.temperaments
-          .map((temp) => temp.name)
-          .join(", ");
-      }
-    });
-
-    filtBreeds = breeds.filter(
+    // Mover el filtro de temperamento a un nuevo componente y manejarlo como arrays.
+    let filtBreeds = breeds.filter(
       (breed) =>
-        breed.name.toUpperCase().includes(filter.breed.toUpperCase()) &&
+        breed.name.toUpperCase().includes(filter.name.toUpperCase()) &&
         breed.temperament
-          ?.toUpperCase()
+          ?.join(", ")
+          .toUpperCase()
           .includes(filter.temperament.toUpperCase())
     );
 
@@ -69,6 +64,7 @@ const BreedList = ({ filter }) => {
       );
     }
 
+    setLength(filtBreeds.length);
     setFilteredBreeds(filtBreeds.slice(page * 8 - 8, page * 8));
   };
 
@@ -89,6 +85,13 @@ const BreedList = ({ filter }) => {
         <button
           className={page < 2 ? s.pagDisabledBtn : s.pagBtn}
           disabled={page < 2}
+          onClick={() => setPage(1)}
+        >
+          {"<<"}
+        </button>
+        <button
+          className={page < 2 ? s.pagInvisibleBtn : s.pagBtn}
+          disabled={page < 2}
           onClick={() => setPage(page - 1)}
         >
           {page - 1}
@@ -97,11 +100,18 @@ const BreedList = ({ filter }) => {
           {page}
         </button>
         <button
-          className={filteredBreeds.length < 8 ? s.pagDisabledBtn : s.pagBtn}
+          className={filteredBreeds.length < 8 ? s.pagInvisibleBtn : s.pagBtn}
           disabled={filteredBreeds.length < 8}
           onClick={() => setPage(page + 1)}
         >
           {page + 1}
+        </button>
+        <button
+          className={filteredBreeds.length < 8 ? s.pagDisabledBtn : s.pagBtn}
+          disabled={filteredBreeds.length < 8}
+          onClick={() => setPage(Math.ceil(length / 8))}
+        >
+          {">>"}
         </button>
       </div>
     </div>

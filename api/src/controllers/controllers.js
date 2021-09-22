@@ -18,7 +18,9 @@ const getApiBreeds = async () => {
       maxWeight: Number(breed.weight.metric.split("-")[1] || 0),
       lifeSpan: breed.life_span,
       bredFor: breed.bred_for,
-      temperament: breed.temperament,
+      temperament: breed.temperament?.includes(",")
+        ? breed.temperament?.split(",").map((temp) => temp.trim())
+        : breed.temperament?.split(),
     };
   });
   return filteredData;
@@ -39,7 +41,22 @@ const getDbBreeds = async () => {
 const getBreeds = async () => {
   const apiBreeds = await getApiBreeds();
   const dbBreeds = await getDbBreeds();
-  const breeds = apiBreeds.concat(dbBreeds);
+  const mappedDbBreeds = dbBreeds.map((breed) => {
+    return {
+      id: breed.id,
+      name: breed.name,
+      origin: breed.origin,
+      photo: breed.photo,
+      minHeight: breed.minHeight,
+      maxHeight: breed.maxHeight,
+      minWeight: breed.minWeight,
+      maxWeight: breed.maxWeight,
+      lifeSpan: breed.lifeSpan,
+      bredFor: breed.bredFor,
+      temperament: breed.temperaments.map((temp) => temp.name),
+    };
+  });
+  const breeds = apiBreeds.concat(mappedDbBreeds);
   return breeds;
 };
 
@@ -47,10 +64,9 @@ const getTemperaments = async () => {
   const breeds = await getBreeds();
   breeds.forEach((breed) => {
     if (breed.temperament) {
-      let temps = breed.temperament.split(",");
-      for (let i = 0; i < temps.length; i++) {
+      for (let i = 0; i < breed.temperament.length; i++) {
         Temperament.findOrCreate({
-          where: { name: temps[i].trim() },
+          where: { name: breed.temperament[i].trim() },
         });
       }
     }

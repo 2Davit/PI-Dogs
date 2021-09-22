@@ -16,7 +16,7 @@ const NavBar = ({ filter, setFilter }) => {
       <div className={s.filterInputsContainer}>
         <input
           className={s.filterInputs}
-          name="breed"
+          name="name"
           value={filter.breed}
           onChange={handleChange}
           placeholder="Search for breed"

@@ -30,7 +30,7 @@ const Card = ({ breed }) => {
             <span>Temperaments</span>
           </div>
           <div className={s.temps}>
-            <span>{breed.temperament}</span>
+            <span>{breed.temperament.join(", ")}</span>
           </div>
         </div>
       </div>

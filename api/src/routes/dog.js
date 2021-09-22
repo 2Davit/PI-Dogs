@@ -15,8 +15,6 @@ router.post("/", async (req, res) => {
     temperament,
   } = req.body;
 
-  /* const temp = temperament?.join(); */
-
   let newBreed = await Dog.create({
     name: name,
     photo:
@@ -28,7 +26,6 @@ router.post("/", async (req, res) => {
     maxWeight: maxWeight,
     lifeSpan: lifeSpan,
     bredFor: bredFor,
-    /* temperament: temp ? temp : "Unknow", */
   });
 
   let temps = await Temperament.findAll({

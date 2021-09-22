@@ -10,7 +10,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const [filter, setFilter] = useState({
-    breed: "",
+    name: "",
     temperament: "",
     sortBy: "",
   });
